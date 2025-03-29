@@ -34,6 +34,6 @@ func main() {
 	case result := <-channelViaCepApi:
 		fmt.Println(result)
 	case <-time.After(1 * time.Second):
-		println("timeout")
+		fmt.Println("timeout")
 	}
 }

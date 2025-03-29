@@ -60,5 +60,7 @@ func executeRequest(url string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
+	// simulação para da timeout
+	// time.Sleep(3 * time.Second)
 	return responseByte, nil
 }
