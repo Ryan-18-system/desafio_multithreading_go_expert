@@ -36,12 +36,12 @@ func GetCepViaCeplApi(cep string) (*dto.Address, error) {
 	return address, nil
 }
 func parseJsonResponse(jsonResponse []byte) (*dto.Address, error) {
-	var address *dto.Address
+	var address dto.Address
 	err := json.Unmarshal(jsonResponse, &address)
 	if err != nil {
 		return nil, err
 	}
-	return address, nil
+	return &address, nil
 }
 func executeRequest(url string) ([]byte, error) {
 	req, err := http.NewRequest("GET", url, nil)
